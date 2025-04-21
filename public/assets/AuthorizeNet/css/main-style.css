@@ -1,0 +1,561 @@
+.pt{
+    padding-top: 70px;
+}
+.pb{
+    padding-bottom: 70px;
+}
+ /* ============================================= */
+/* !!!!          NICE SELECT CSS           !!!! */
+/* ============================================= */
+.nice-select {
+    -webkit-tap-highlight-color: transparent;
+    background-color: transparent;
+    border-bottom: 1px solid var(--white);
+    cursor: pointer;
+    display: block;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1;
+    outline: none;
+    position: relative;
+    text-align: left !important;
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    padding: 15px 25px 15px 0px;
+    width: 100%;
+    -moz-transition: all 0.2s ease-in-out;
+    -ms-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    appearance: none;
+}
+.nice-select:after {
+    content: '';
+    display: block;
+    height: 10px;
+    width: 10px;
+    pointer-events: none;
+    position: absolute;
+    right: 9px;
+    top: 50%;
+    background: url('../images/down-arrow-white.svg');
+    background-position: 100%;
+    background-repeat: no-repeat;
+    background-size: 10px;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    -webkit-transition: transform .3s linear, -webkit-transform .3s linear;
+    transition: -webkit-transform .3s linear;
+    -o-transition: transform .3s linear, -webkit-transform .3s linear;
+    transition: transform .3s linear;
+    transition: transform .3s linear, -webkit-transform .3s linear;
+    -moz-transition: transform .3s linear, -webkit-transform .3s linear;
+    -ms-transition: transform .3s linear, -webkit-transform .3s linear;
+}
+.nice-select.open:after {
+    transform: translateY(-50%) rotate(180deg);
+    -webkit-transform: translateY(-50%) rotate(180deg);
+    -moz-transform: translateY(-50%) rotate(180deg);
+    -ms-transform: translateY(-50%) rotate(180deg);
+    -o-transform: translateY(-50%) rotate(180deg);
+}
+.nice-select.open .list {
+    opacity: 1;
+    pointer-events: auto;
+    -webkit-transform: scale(1) translateY(0);
+    -ms-transform: scale(1) translateY(0);
+    transform: scale(1) translateY(0);
+    -moz-transform: scale(1) translateY(0);
+    -o-transform: scale(1) translateY(0);
+}
+.nice-select.disabled {
+    border-color: var(--border-color);
+    color: var(--border-color);
+    pointer-events: none;
+}
+.nice-select.disabled:after {
+    border-color: #cccccc;
+}
+.nice-select.wide {
+    width: 100%;
+}
+.nice-select.wide .list {
+    left: 0 !important;
+    right: 0 !important;
+}
+.nice-select.right {
+    float: right;
+}
+.nice-select.right .list {
+    left: auto;
+    right: 0;
+}
+.nice-select.small {
+    font-size: 12px;
+    height: 36px;
+    line-height: 34px;
+}
+.nice-select.small:after {
+    height: 4px;
+    width: 4px;
+}
+.nice-select.small .option {
+    line-height: 34px;
+    min-height: 34px;
+}
+.nice-select .list {
+    background-color: var(--white);
+    color: var(--theme-color);
+    border: 0;
+    box-shadow: 1px 9px 23px rgb(0 0 0 / 75%);
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin-top: 0;
+    opacity: 0;
+    overflow: hidden;
+    padding: 8px 0px;
+    border-radius: 10px;
+    pointer-events: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    -webkit-transform-origin: 50% 0;
+    -ms-transform-origin: 50% 0;
+    transform-origin: 50% 0;
+    -webkit-transform: scale(0.75) translateY(-21px);
+    -ms-transform: scale(0.75) translateY(-21px);
+    transform: scale(0.75) translateY(-21px);
+    -webkit-transition: all 0.2s cubic-bezier(0.5, 0, 0, 1.25), opacity 0.15s ease-out;
+    transition: all 0.2s cubic-bezier(0.5, 0, 0, 1.25), opacity 0.15s ease-out;
+    z-index: 2;
+    width: 100%;
+    -moz-transform: scale(0.75) translateY(-21px);
+    -o-transform: scale(0.75) translateY(-21px);
+    -moz-transition: all 0.2s cubic-bezier(0.5, 0, 0, 1.25), opacity 0.15s ease-out;
+    -ms-transition: all 0.2s cubic-bezier(0.5, 0, 0, 1.25), opacity 0.15s ease-out;
+    -o-transition: all 0.2s cubic-bezier(0.5, 0, 0, 1.25), opacity 0.15s ease-out;
+    appearance: none;
+
+}
+.nice-select .list:hover .option:not(:hover) {
+    background-color: transparent !important;
+}
+.nice-select .option {
+    cursor: pointer;
+    font-weight: 500;
+    list-style: none;
+    outline: none;
+    padding-left: 14px;
+    padding-right: 14px;
+    text-align: left;
+    -webkit-transition: all 0.2s;
+    transition: all 0.2s;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    padding: 5px 15px;
+    -moz-transition: all 0.2s;
+    -ms-transition: all 0.2s;
+    -o-transition: all 0.2s;
+    margin: 0 !important;
+    color: var(--black);
+    appearance: none;
+}
+.nice-select .option:hover,
+.nice-select .option.focus,
+.nice-select .option.selected.focus {
+    color: var(--black);
+}
+.nice-select .option.selected {
+    font-weight: 800;
+}
+.nice-select .option.disabled {
+    background-color: transparent;
+    color: #999;
+    cursor: default;
+}
+.no-csspointerevents .nice-select .list {
+    display: none;
+}
+.no-csspointerevents .nice-select.open .list {
+    display: block;
+}
+/*---vehicle booking page css start---*/ 
+.header-style-one .main-navigationbar .logo-col {
+    max-width: 95px;
+    width: 100%;
+}
+.header-style-one .main-navigationbar .logo-col img{
+    width: 100%;
+}
+.header-style-one .main-navigationbar {
+    position: relative;
+    padding: 15px 0;
+    box-shadow: rgb(131 131 131 / 15%) 0px 1px 4px;
+}
+.main-banner-section{
+    position: relative;
+    z-index: 1;
+}
+.vehicle-booking-sec .vehicle-booking-inner {
+    position: relative;
+    padding:  30px 20px;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    margin-top: -60px;
+    z-index: 2;
+}
+.vehicle-booking-inner .booking-form{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-align: end;
+    -ms-flex-align: end;
+    align-items: flex-end;
+    row-gap: 15px;
+    justify-content: space-between;
+    align-items: center;
+    -webkit-align-items: center;
+}
+.vehicle-booking-inner .booking-form .date-pick {
+    display: flex;
+    align-items: center;
+    border: none;
+    margin-bottom: 0px;
+}
+.vehicle-booking-inner .booking-form .date-pick input{
+    border: none;
+}
+.select-seats{
+    min-width: 100px;
+}
+.checkbox-custom {
+    display: flex;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    align-items: center;
+    -webkit-align-items: center;
+    position: relative;
+}
+input[type="radio"] {
+    display: none !important;
+}
+body.theme-1 .vehicle-booking-inner .form-control:focus,.checkbox-custom input:checked+label:before{
+    box-shadow: 0 0 0 0.2rem rgb(245 245 245 / 25%);
+}
+.vehicle-booking-inner .checkbox-custom input {
+    padding: 0;
+    height: initial;
+    width: initial;
+    margin-bottom: 0;
+    display: none;
+    cursor: pointer;
+}
+
+.vehicle-booking-inner .check-group label:before {
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+.vehicle-booking-inner .checkbox-custom label:before ,.seat-booking-form .checkbox-custom label:before {
+    content: '';
+    appearance: none;
+    -webkit-appearance: none;
+    background-color: #fff;
+    border: 1px solid #e5e7eb;
+    padding: 8px;
+    display: inline-block;
+    position: absolute;
+    vertical-align: middle;
+    cursor: pointer;
+    left: 0px;
+    top: 50%;
+    border-radius: 5px;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    margin-right: 15px;
+}
+
+.vehicle-booking-inner .checkbox-custom input:checked+label:after,.seat-booking-form .checkbox-custom input:checked+label:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 7px;
+    width: 4px;
+    height: 8px;
+    border: solid #000;
+    border-width: 0px 1px 1px 0;
+    transform: translateY(-50%) rotate(45deg);
+    -moz-transform: translateY(-50%) rotate(45deg);
+    -ms-transform: translateY(-50%) rotate(45deg);
+    -o-transform: translateY(-50%) rotate(45deg);
+    -webkit-transform: translateY(-50%) rotate(45deg);
+}
+/*---vehicle booking page css end---*/ 
+/*--- booking form page css start---*/ 
+.booking-form-banner{
+    position: relative;
+    padding: 100px 0;
+    z-index: 1;
+    background-position: 0 26%;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+}
+.booking-form-banner h2 {
+    font-size: 50px;
+}
+.booking-form-banner p {
+    font-weight: 600;
+    font-size: 14px;
+}
+.available-service-sec {
+    padding-top: 40px;
+}
+.modify-search.set{
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.modify-search.set .acnav-label {
+    padding: 10px 30px 10px 10px;
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--bs-body-color);
+    border: none;
+    background: var(--bs-border-color);
+}
+ .modify-search.set .acnav-label:after{
+    content: "";
+    position: absolute;
+    background-image: url(../images/down-arrow-white.svg);
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: 10px;
+    right: 10px;
+    transition: all ease-in-out 0.5s;
+    height: 20px;
+    width: 20px;
+ }
+.modify-search.set .acnav-list {
+    padding: 15px;
+    color: var(--bs-body-color);
+    border: none;
+    background: var(--bs-border-color);
+}
+.modify-search.set .acnav-list {
+    display: none;
+}
+
+/*--- booking form page css end---*/ 
+/*--- search results section css start---*/ 
+.search-results-sec .search-result-bar{
+    padding: 15px;
+}
+.search-resultbar-right .form-select{
+    min-width: 150px;
+    padding: 5px 30px 5px 10px;
+    background-position: right 0.5rem center;
+}
+.search-resultbar-left {
+    flex: 1;
+}
+.search-iteam .lable-color{
+    color: #be0028;
+}
+.search-iteam .light-lable-color{
+    color: #ccc;
+}
+.search-iteam .price-color{
+    color: #013D29;
+}
+.info-col {
+    flex: 1;
+}
+.info-col-one ,.info-col-four,.info-col-three{
+    flex: 0 0 20%;
+}
+.info-col-seven .btn{
+    min-width: 70px;
+    padding: 10px;
+    line-height: 1;
+}
+/*--- search results section css end---*/ 
+/*******  booking from css start ********/
+.seating-arrangement{
+    max-width: 85%;
+    width: 100%;
+    margin: 20px auto;
+}
+
+.bus {
+    display: flex;
+    gap: 20px;
+    border: 1px solid var(--bs-border-color-translucent);
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    padding: 15px;
+    justify-content: space-between;
+}
+.bus .bus-bootom-seats .right-seat{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.bus.seat3-2 .seats .seat:nth-child(3) {
+    margin-right: 14.2857142857%;
+}
+.seats {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content:space-between ;
+    -ms-flex-pack: center !important;
+    padding: 0;
+    margin-bottom: 2px;
+    gap: 20px;
+}
+.seats .seat {
+    display: flex;
+    flex: 0 0 14.2857142857%;
+    padding: 3px;
+    position: relative;
+}
+.seats .seat label {
+    border-radius: 4px;
+    padding: 0;
+    width: 25px;
+    height: 25px;
+    margin-bottom: 0.1rem;
+    display: inline-block;
+    font-size: 0.7rem;
+}
+.seats .seat label svg {
+    width: 20px;
+    height: 20px;
+}
+.seats .seat input[type="radio"] {
+    display: none !important;
+}
+.seats .seat input[type="radio"] + label {
+    text-align: center;
+    cursor: pointer;
+    display: inline-block;
+    color: #fff;
+}
+.seats .seat input[type="radio"]:checked + label {
+    background: #46be8a;
+}
+.seats .seat input[type="radio"]:checked + label:after {
+    background: none;
+}
+.seats .seat input[type="radio"]:disabled + label {
+    cursor: not-allowed;
+}
+.seats .seat input[type="radio"]:disabled + label svg path{
+    fill: #f73737;
+}
+.set-booking-select{
+    min-width: 110px;
+    padding-right: 30px;
+    background-position: right 0.5rem center;
+}
+.seat-booking-form .checkbox-custom label{
+    padding-left: 15px;
+}
+.seat svg{
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+}
+.point-time .seat:nth-child(1) svg path{
+    fill: #ffc107;
+}
+.point-time .seat:nth-child(2) svg path{
+    fill: #adb5bd;
+}
+.point-time .seat:nth-child(3) svg path{
+    fill: #20c997;
+}
+.point-time .seat:nth-child(4) svg path{
+    fill: #f73737;
+}
+.note li{
+    list-style: none;
+}
+
+
+/******** booking from css end ***********/
+/********   detail  css start  *********/
+.header-button svg{
+    width: 15px;
+    height: 15px;
+    margin-right: 5px;
+}
+.header-button svg path{
+    fill: white;
+}
+.invoice-title{
+    border-bottom: 1px solid var(--bs-border-color);
+}
+.invoice-print table tr th:first-child{
+    width: 50px;
+}
+
+/********* detail css end **********/
+/********  patment-sec css start  *********/
+.payment-sec{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow-y: scroll;
+}
+.payment-logo{
+    max-width: 140px;   
+    margin: 0 auto;
+    width: 100%;
+}
+.payment-logo img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.payment-sec .card{
+    max-width: 500px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin: 0 auto;
+}
+/********  patment-sec css end  *********/
